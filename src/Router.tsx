@@ -1,5 +1,5 @@
 import ErrorBoundary from "./components/ErrorBoundary";
-import { createBrowserRouter, createHashRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "./routes/Home";
 import Character from "./routes/Character";
 

@@ -1,5 +1,5 @@
 import ErrorBoundary from "./components/ErrorBoundary";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, createHashRouter } from "react-router-dom";
 import Home from "./routes/Home";
 import Character from "./routes/Character";
 
@@ -26,12 +26,15 @@ const routerData: IRouter[] = [
   },
 ];
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
   routerData.map((routerInfo) => {
     return {
       path: routerInfo.path,
       element: routerInfo.element,
       errorElement: routerInfo.errorElement,
     };
-  })
+  }),
+  {
+    basename: "/marvel-characters-client/",
+  }
 );
